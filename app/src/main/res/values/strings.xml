@@ -17,6 +17,8 @@
     </string>
 
 
-
     <string name="terminos_y_condiciones_tittle">Terminos y condiciones:</string>
+    <string name="consejos_relajacion">Técnicas de relajación</string>
+    <string name="guia_padre">¿Cómo usar la aplicación?</string>
+    <string name="ejercicios_especificos">Config. ejercicios especificos</string>
 </resources>
