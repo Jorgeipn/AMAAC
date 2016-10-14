@@ -6,19 +6,19 @@
 
         <item
             android:id="@+id/nav_guia_padre"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_menu_black_guia_24dp"
             android:title="@string/guia_padre"
             tools:ignore="HardcodedText" />
 
         <item
             android:id="@+id/nav_consejos_relajacion"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_black_tecnicas_relajacion_24dp"
             android:title="@string/consejos_relajacion"
             tools:ignore="HardcodedText" />
 
         <item
             android:id="@+id/nav_ejercicios_especificos"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_black_configuracion_24dp"
             android:title="@string/ejercicios_especificos"
             tools:ignore="HardcodedText" />
     </group>

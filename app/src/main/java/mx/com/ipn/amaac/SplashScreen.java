@@ -1,12 +1,13 @@
 package mx.com.ipn.amaac;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity{
 
     private static final long SPLASH_SCREEN_DELAY = 3000;
     SharedPreferences preferences;

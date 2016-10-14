@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimary"
     tools:context="mx.com.ipn.amaac.SplashScreen"
+
     >
 
     <LinearLayout
