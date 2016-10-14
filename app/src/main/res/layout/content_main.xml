@@ -28,11 +28,14 @@
             android:id="@+id/play_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/ic_launcher_play_200dp"
+            android:background="@drawable/ic_launcher_play2_200dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:layout_margin="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
             />
 
 
