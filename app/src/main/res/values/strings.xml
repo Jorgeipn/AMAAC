@@ -21,6 +21,6 @@
     <string name="consejos_relajacion">Técnicas de relajación</string>
     <string name="guia_padre">¿Cómo usar la aplicación?</string>
     <string name="ejercicios_especificos">Config. ejercicios especificos</string>
-    <string name="title_tecnica_list">Tecnicas de Relajación</string>
     <string name="title_tecnica_detail">Detalle de la técnica</string>
+    <string name="title_guiapadre_detail">guia_padre Detail</string>
 </resources>

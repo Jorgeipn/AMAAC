@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_guia_padre) {
-
+            Intent intent= new Intent(this,guiapadreListActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_consejos_relajacion) {
             Intent intent= new Intent(this,TecnicaListActivity.class);
@@ -86,11 +87,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_ejercicios_especificos) {
 
         }
-
-
-
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
