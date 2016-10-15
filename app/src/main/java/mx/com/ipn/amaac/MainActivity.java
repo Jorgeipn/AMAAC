@@ -1,5 +1,7 @@
 package mx.com.ipn.amaac;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -77,8 +79,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_guia_padre) {
 
-        } else if (id == R.id.nav_consejos_relajacion) {
 
+        } else if (id == R.id.nav_consejos_relajacion) {
+            Intent intent= new Intent(this,TecnicaListActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_ejercicios_especificos) {
 
         }
