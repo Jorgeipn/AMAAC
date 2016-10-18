@@ -10,7 +10,8 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context="mx.com.ipn.amaac.TecnicaListActivity"
-    tools:listitem="@layout/tecnica_list_content" />
+    tools:listitem="@layout/tecnica_list_content"
+    />
 
     <!--
    se ha incrustado el layout manager a través del atributo app:layoutManager para generar una lista.

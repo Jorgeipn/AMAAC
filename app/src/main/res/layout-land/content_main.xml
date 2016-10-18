@@ -25,36 +25,25 @@
         >
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight=".6"
-            app:srcCompat="@drawable/ic_launcher_play_200dp"
             android:id="@+id/imageView5"
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".4"
+            app:srcCompat="@drawable/ic_launcher_play_200dp"
+            android:scaleType="fitXY"
             android:layout_gravity="center_vertical|center_horizontal"
             tools:ignore="ContentDescription,RtlHardcoded,RtlSymmetry"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
-            android:paddingLeft="30dp" />
+            android:paddingLeft="15dp"
+            />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_weight=".4"
-            android:weightSum="1"
-            android:layout_marginBottom="30dp"
-            >
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_launcher_creador_frases_200dp"
-                android:id="@+id/imageView7"
-                android:layout_weight=".5"
-                android:scaleType="fitStart"
-                android:contentDescription=""
-                tools:ignore="ContentDescription" />
-
+            android:layout_weight=".6"
+            android:weightSum="1">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -62,11 +51,22 @@
                 app:srcCompat="@drawable/ic_launcher_ejercicios_especificos_200dp"
                 android:id="@+id/imageView6"
                 android:layout_weight=".5"
-                android:scaleType="fitEnd"
+                android:scaleType="fitStart"
                 tools:ignore="ContentDescription,NestedWeights"
+                android:paddingLeft="60dp"
                 />
 
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_launcher_creador_frases_200dp"
+                android:id="@+id/imageView7"
+                android:layout_weight=".5"
+                android:scaleType="fitEnd"
+                android:contentDescription=""
+                tools:ignore="ContentDescription"
+                android:paddingRight="60dp"
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

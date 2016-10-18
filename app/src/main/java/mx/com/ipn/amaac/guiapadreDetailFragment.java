@@ -69,11 +69,11 @@ public class guiapadreDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tecnica_detail, container, false);
+        View v = inflater.inflate(R.layout.tecnica_detail_guia_de_uso, container, false);
 
         // Show the dummy content as text in a TextView.
         if (itemDetalldo != null) {
-            ((TextView) v.findViewById(R.id.tecnica_detail)).setText(itemDetalldo.descripcion);
+            ((TextView) v.findViewById(R.id.tecnica_detail_guia_de_uso)).setText(itemDetalldo.descripcion);
         }
 
         return v;

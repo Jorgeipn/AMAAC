@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/altura_item"
+    android:layout_height="136dp"
     android:orientation="horizontal"
     android:layout_marginTop="@dimen/margen_estandar"
     android:layout_marginBottom="@dimen/margen_estandar">
@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Título"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textColor="@color/colorPrimary_text"
         android:id="@+id/txt_titulo"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/iv_miniatura"
-        tools:ignore="HardcodedText,RtlHardcoded" />
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
 
     <TextView
         android:textColor="@color/colorSecondary_text"
@@ -30,6 +30,7 @@
         android:layout_alignRight="@+id/txt_titulo"
         android:layout_above="@+id/txt_fecha"
         tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"
+        android:paddingBottom="2dp"
         />
 
     <TextView
@@ -50,7 +51,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/margen_estandar"
-        tools:ignore="ContentDescription,RtlHardcoded" />
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
 
 
 </RelativeLayout>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/colorPrimary_light"
     tools:context="mx.com.ipn.amaac.TecnicaListActivity">
     <!--Esta es el principal archivo de diseño para el archivo TecnicaListActivity.java -->
     <android.support.design.widget.AppBarLayout

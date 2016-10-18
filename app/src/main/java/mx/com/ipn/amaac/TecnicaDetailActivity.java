@@ -1,6 +1,7 @@
 package mx.com.ipn.amaac;
 
         import android.content.Intent;
+        import android.net.Uri;
         import android.os.Bundle;
         import android.support.design.widget.FloatingActionButton;
         import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ package mx.com.ipn.amaac;
         import android.support.v7.app.AppCompatActivity;
         import android.support.v7.app.ActionBar;
         import android.view.MenuItem;
+        import android.widget.TextView;
 
 /**
  * An activity representing a single Consejo detail screen. This
@@ -75,6 +77,17 @@ public class TecnicaDetailActivity extends AppCompatActivity {
             NavUtils.navigateUpTo(this,new Intent(this, TecnicaListActivity.class));
             return true;
         }
-        return super.onOptionsItemSelected(item);
+
+        else if(id == R.id.acccion_favoritos) {
+
+
+            TextView titulo = (TextView) findViewById(R.id.fecha);
+            String link = titulo.getText().toString();
+
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
+        }
+
+
+            return super.onOptionsItemSelected(item);
     }
 }

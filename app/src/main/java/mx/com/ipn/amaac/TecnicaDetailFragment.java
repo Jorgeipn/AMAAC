@@ -63,6 +63,7 @@ public class TecnicaDetailFragment extends Fragment {
         // Show the dummy content as text in a TextView.
         if (itemDetalldo != null) {
             ((TextView) v.findViewById(R.id.tecnica_detail)).setText(itemDetalldo.descripcion);
+            ((TextView) v.findViewById(R.id.fecha)).setText(itemDetalldo.fecha);
         }
 
         return v;
