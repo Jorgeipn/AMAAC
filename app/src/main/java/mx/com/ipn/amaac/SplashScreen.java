@@ -1,11 +1,12 @@
 package mx.com.ipn.amaac;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import mx.com.ipn.amaac.tableroDeComunicacion.adaptadores.TableroDeComunicacion_main;
 
 public class SplashScreen extends AppCompatActivity{
 
@@ -20,6 +21,7 @@ public class SplashScreen extends AppCompatActivity{
 
         preferences = getSharedPreferences("TerminosYCondiciones", MODE_PRIVATE);
         final boolean TERMINOS_Y_CONDICIONES= preferences.getBoolean("opcion", false);
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -37,4 +39,13 @@ public class SplashScreen extends AppCompatActivity{
         },SPLASH_SCREEN_DELAY);
 
     }
+
+
+
+
+
+
+
+
+
 }

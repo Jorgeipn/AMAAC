@@ -66,6 +66,7 @@
                 android:contentDescription=""
                 tools:ignore="ContentDescription"
                 android:paddingRight="60dp"
+                android:onClick="launch_tablero_de_comunicacion"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mx.com.ipn.amaac">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--Layout Pantalla de Inicio -->
+
+        <!-- Layout Pantalla de Inicio -->
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
@@ -21,16 +22,16 @@
             </intent-filter>
         </activity>
 
-        <!--Layout Pantalla de Terminos y Condiciones -->
+        <!-- Layout Pantalla de Terminos y Condiciones -->
         <activity android:name=".TerminosYCondiciones" />
 
-        <!--Layout Pantalla Principal-->
+        <!-- Layout Pantalla Principal -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!--Layout Pantalla del memu del tutor(Opcion Como usar la aplicacion -->
+        <!-- Layout Pantalla del memu del tutor(Opcion Como usar la aplicacion -->
         <activity
             android:name=".guiapadreListActivity"
             android:label="@string/guia_padre"
@@ -40,7 +41,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mx.com.ipn.amaac.MainActivity" />
         </activity>
-
         <activity
             android:name=".guiapadreDetailActivity"
             android:label="@string/title_guiapadre_detail"
@@ -51,7 +51,7 @@
                 android:value="mx.com.ipn.amaac.guiapadreListActivity" />
         </activity>
 
-        <!--Layout Pantalla del memu del tutor(Opcion Tecnicas de relajacion -->
+        <!-- Layout Pantalla del memu del tutor(Opcion Tecnicas de relajacion -->
 
         <activity
             android:name=".TecnicaListActivity"
@@ -62,7 +62,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mx.com.ipn.amaac.MainActivity" />
         </activity>
-
         <activity
             android:name=".TecnicaDetailActivity"
             android:label="@string/title_tecnica_detail"
@@ -73,6 +72,18 @@
                 android:value="mx.com.ipn.amaac.TecnicaListActivity" />
         </activity>
 
-    </application>
+
+
+    <!--Tablero de comunicacion -->
+    <activity
+        android:screenOrientation="landscape"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:name=".tableroDeComunicacion.adaptadores.TableroDeComunicacion_main" />
+
+
+</application>
+
+
+
 
 </manifest>

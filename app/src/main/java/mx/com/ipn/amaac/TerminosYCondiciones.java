@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import mx.com.ipn.amaac.tableroDeComunicacion.adaptadores.TableroDeComunicacion_main;
+
 public class TerminosYCondiciones extends AppCompatActivity {
 
     SharedPreferences preferences;
@@ -17,6 +19,11 @@ public class TerminosYCondiciones extends AppCompatActivity {
 
         preferences = getSharedPreferences("TerminosYCondiciones", MODE_PRIVATE);
         boolean TERMINOS_Y_CONDICIONES= preferences.getBoolean("opcion", false);
+
+
+
+
+
 
     }
 

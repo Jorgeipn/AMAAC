@@ -21,4 +21,12 @@
     <dimen name="ancho_panel_lista">512dp
     </dimen><!-- El ancho del panel de lista hace referencia a su tamaño.. -->
 
+
+    <!--Tablero de comunicacion-->
+
+    <!--Especifica el ancho de cada columna para el pictoframa de la frase a contruir de la cuadrícula GridView en agtributo columnWidth-->
+    <dimen name="dimPicFrase">60dp</dimen>
+    <!--Especifica el ancho de cada columna para el contenedor de pictogramas de acuerdo asu categoria de la cuadrícula GridView en agtributo columnWidth-->
+    <dimen name="dimPicCat">100dp</dimen>
+
 </resources>
