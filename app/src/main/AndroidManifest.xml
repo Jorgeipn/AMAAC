@@ -72,8 +72,6 @@
                 android:value="mx.com.ipn.amaac.TecnicaListActivity" />
         </activity>
 
-
-
     <!--Tablero de comunicacion -->
     <activity
         android:screenOrientation="landscape"

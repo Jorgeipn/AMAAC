@@ -28,8 +28,6 @@ import mx.com.ipn.amaac.tableroDeComunicacion.model.Utilidades;
 
 import static mx.com.ipn.amaac.tableroDeComunicacion.model.Pictograma.PIC_NORMAL;
 import static mx.com.ipn.amaac.tableroDeComunicacion.model.Pictograma.PIC_SELECCIONADO;
-
-
 /**
  * Created by Jorge Lopez
  * Angel Fierro
@@ -43,7 +41,6 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
     private TextToSpeech textToSpeech;
 
     private List<Pictograma> picto_seleccionados=new ArrayList<Pictograma>();
-    private GridLayoutManager mLayoutManager;
 //    private PictogramaFraseAdapter adapterFrase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +50,7 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
         View recyclerView = findViewById(R.id.pictograma_list_categoria);
         assert recyclerView != null;
 
-       // InicializarDatos();
+        InicializarDatos();
         InicializarAdaptador(recyclerView);
 
     }
@@ -155,22 +152,27 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
         if(dbHandler.count()==0){
             Log.d("agregar", "Se  agregaran nuevos pictogramas");
 
-            dbHandler.addUser(new Pictograma("Aguila", 1,R.drawable.ic_pic_animales_aguila,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Borrego cimarron", 1,R.drawable.ic_pic_animales_borrego_cimarron,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Buho", 1,R.drawable.ic_pic_animales_buho,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Camaleon", 1,R.drawable.ic_pic_animales_camaleon,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Conejo", 1,R.drawable.ic_pic_animales_conejo,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Jirafa", 1,R.drawable.ic_pic_animales_jirafa,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Libelula", 1,R.drawable.ic_pic_animales_libelula,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Loro", 1,R.drawable.ic_pic_animales_loro,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Mapache", 1,R.drawable.ic_pic_animales_mapache,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Vaca", 1,R.drawable.ic_pic_animales_vaca,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Comer", 1,R.drawable.ic_pic_verbos_comer,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Comprar", 1,R.drawable.ic_pic_verbos_comprar,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Escribir", 1,R.drawable.ic_pic_verbos_escribir,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Estudiar", 1,R.drawable.ic_pic_verbos_estudiar,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Jugar", 1,R.drawable.ic_pic_verbos_jugar,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Leer", 1,R.drawable.ic_pic_verbos_leer,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Nadar", 1,R.drawable.ic_pic_verbos_nadar,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Saltar", 1,R.drawable.ic_pic_verbos_saltar,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Viajar", 1,R.drawable.ic_pic_verbos_viajar,Pictograma.PIC_NORMAL));
 
             dbHandler.addUser(new Pictograma("Coca", 2,R.drawable.ic_pic_alimentos_coke,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("Hok dog", 2,R.drawable.ic_pic_alimentos_hotdog,Pictograma.PIC_NORMAL));
             dbHandler.addUser(new Pictograma("Dona", 2,R.drawable.ic_pic_alimentos_dona,Pictograma.PIC_NORMAL));
             dbHandler.addUser(new Pictograma("Hamburguesa", 2,R.drawable.ic_pic_alimentos_hamburger,Pictograma.PIC_NORMAL));
-            dbHandler.addUser(new Pictograma("huevo", 2,R.drawable.ic_pic_alimentos_huevo,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Hot dog", 2,R.drawable.ic_pic_alimentos_hotdog,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Huevo", 2,R.drawable.ic_pic_alimentos_huevo,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Langosta", 2,R.drawable.ic_pic_alimentos_langosta,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Leche", 2,R.drawable.ic_pic_alimentos_leche,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Paleta de hielo", 2,R.drawable.ic_pic_alimentos_paletadehielo,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Palomitas", 2,R.drawable.ic_pic_alimentos_palomitas,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Sushi", 2,R.drawable.ic_pic_alimentos_sushi,Pictograma.PIC_NORMAL));
+
 
             dbHandler.addUser(new Pictograma("Hermana", 3,R.drawable.ic_pic_familia_hermana,Pictograma.PIC_NORMAL));
             dbHandler.addUser(new Pictograma("Hermano", 3,R.drawable.ic_pic_familia_hermano,Pictograma.PIC_NORMAL));
@@ -182,17 +184,51 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
             dbHandler.addUser(new Pictograma("Capitán", 4,R.drawable.ic_pic_profesiones_capitan,Pictograma.PIC_NORMAL));
             dbHandler.addUser(new Pictograma("Detective", 4,R.drawable.ic_pic_profesiones_detective,Pictograma.PIC_NORMAL));
             dbHandler.addUser(new Pictograma("Doctor", 4,R.drawable.ic_pic_profesiones_doctor,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Enfermera", 4,R.drawable.ic_pic_profesiones_enfermera,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Granjero", 4,R.drawable.ic_pic_profesiones_granjero,Pictograma.PIC_NORMAL));
             dbHandler.addUser(new Pictograma("Ingeniero", 4,R.drawable.ic_pic_profesiones_ingeniero,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Maestra", 4,R.drawable.ic_pic_profesiones_maestra,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Mesera", 4,R.drawable.ic_pic_profesiones_mesera,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Piloto", 4,R.drawable.ic_pic_profesiones_piloto,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Soldado", 4,R.drawable.ic_pic_profesiones_soldado,Pictograma.PIC_NORMAL));
 
+            dbHandler.addUser(new Pictograma("Aeropuerto", 5,R.drawable.ic_pic_lugares_aeropuerto,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Banco", 5,R.drawable.ic_pic_lugares_banco,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Casa", 5,R.drawable.ic_pic_lugares_casa,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Circo", 5,R.drawable.ic_pic_lugares_circo,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Ciudad", 5,R.drawable.ic_pic_lugares_ciudad,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Clínica", 5,R.drawable.ic_pic_lugares_clinica,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Disneylandia", 5,R.drawable.ic_pic_lugares_disney_landia,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Estación de policía", 5,R.drawable.ic_pic_lugares_estacion_policia,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Fábrica", 5,R.drawable.ic_pic_lugares_fabrica,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Farmacia", 5,R.drawable.ic_pic_lugares_farmacia,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Gasolinera", 5,R.drawable.ic_pic_lugares_gasolineria,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Hospital", 5,R.drawable.ic_pic_lugares_hospital,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Hotel", 5,R.drawable.ic_pic_lugares_hotel,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Iglesia", 5,R.drawable.ic_pic_lugares_iglesia,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Montaña", 5,R.drawable.ic_pic_lugares_montanas,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Museo", 5,R.drawable.ic_pic_lugares_museo,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Parque", 5,R.drawable.ic_pic_lugares_parque,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Pizzería", 5,R.drawable.ic_pic_lugares_pizzeria,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Tienda", 5,R.drawable.ic_pic_lugares_tienda,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Veterinaria", 5,R.drawable.ic_pic_lugares_veterinaria,Pictograma.PIC_NORMAL));
 
+            dbHandler.addUser(new Pictograma("Águila", 6,R.drawable.ic_pic_animales_aguila,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Borrego cimarrón", 6,R.drawable.ic_pic_animales_borrego_cimarron,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Buho", 6,R.drawable.ic_pic_animales_buho,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Camaleón", 6,R.drawable.ic_pic_animales_camaleon,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Conejo", 6,R.drawable.ic_pic_animales_conejo,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Jirafa", 6,R.drawable.ic_pic_animales_jirafa,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Libélula", 6,R.drawable.ic_pic_animales_libelula,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Loro", 6,R.drawable.ic_pic_animales_loro,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Mapache", 6,R.drawable.ic_pic_animales_mapache,Pictograma.PIC_NORMAL));
+            dbHandler.addUser(new Pictograma("Vaca", 6,R.drawable.ic_pic_animales_vaca,Pictograma.PIC_NORMAL));
             Log.d("agregaron", "Se  agregaron nuevos pictogramas");
         }
 
 
         // Reading all contacts
     }
-
-
 
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView, DiferenteAdapter adapter, int tipo) {

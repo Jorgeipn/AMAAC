@@ -8,8 +8,7 @@
     android:layout_height="match_parent"
     android:layout_margin="0dp"
     app:layoutManager="GridLayoutManager"
-    android:scrollbars="horizontal"
-    android:scrollbarStyle="outsideInset"
+    android:scrollbars="vertical"
     tools:context=".tableroDeComunicacion.adaptadores.TableroDeComunicacion_main"
     tools:listitem="@layout/item_pictograma_categoria_content"
     />
