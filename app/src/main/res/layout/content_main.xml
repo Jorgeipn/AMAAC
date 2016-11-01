@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
@@ -27,6 +27,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:elevation="@dimen/fab_elevation"
             android:layout_weight=".6"
             app:srcCompat="@drawable/ic_launcher_play_200dp"
             android:id="@+id/imageView5"
@@ -43,33 +44,36 @@
             android:layout_height="200dp"
             android:layout_weight=".4"
             android:weightSum="1"
-            android:layout_marginBottom="30dp"
-            >
+            android:layout_marginBottom="30dp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:elevation="@dimen/fab_elevation"
                 app:srcCompat="@drawable/ic_launcher_creador_frases_200dp"
                 android:id="@+id/imageView7"
                 android:layout_weight=".5"
                 android:scaleType="fitStart"
                 android:contentDescription=""
                 tools:ignore="ContentDescription"
-                android:onClick="launch_tablero_de_comunicacion"
-                />
+                android:onClick="launch_tablero_de_comunicacion" />
 
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/fab_elevation"
                 app:srcCompat="@drawable/ic_launcher_ejercicios_especificos_200dp"
                 android:id="@+id/imageView6"
                 android:layout_weight=".5"
                 android:scaleType="fitEnd"
-                tools:ignore="ContentDescription,NestedWeights"
-                />
+                tools:ignore="ContentDescription,NestedWeights" />
+
 
 
         </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

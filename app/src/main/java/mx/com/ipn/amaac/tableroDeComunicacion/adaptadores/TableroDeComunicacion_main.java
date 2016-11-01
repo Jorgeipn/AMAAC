@@ -1,9 +1,12 @@
 package mx.com.ipn.amaac.tableroDeComunicacion.adaptadores;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -50,29 +53,40 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
         View recyclerView = findViewById(R.id.pictograma_list_categoria);
         assert recyclerView != null;
 
+
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_play);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String x= getTextDatosSeleccionados(picto_seleccionados);
+                speak(x);
+
+            }
+        });
+
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab_delete);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getTextDatosSeleccionados2(picto_seleccionados);
+            }
+        });
+
+        ImageView im=(ImageView) findViewById(R.id.iv_regresar_categoria);
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         InicializarDatos();
         InicializarAdaptador(recyclerView);
 
     }
 
-
-    /////////////////////////////////////////////////////////////////////////////
-
-    public void playFrase(View view){
-
-        String x= getTextDatosSeleccionados(picto_seleccionados);
-        speak(x);
-
-        //Toast.makeText(getApplicationContext(), x , Toast.LENGTH_LONG).show();
-    }
-
-    public void deleteFrase(View view){
-
-        getTextDatosSeleccionados2(picto_seleccionados);
-
-
-//        Toast.makeText(getApplicationContext(), x , Toast.LENGTH_LONG).show();
-    }
 
     public String getTextDatosSeleccionados(List<Pictograma> items){
         String frase="";
@@ -88,27 +102,14 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
 
         picto_seleccionados.clear();
         mostrarDatosSeleccionados(picto_seleccionados);
-        View recyclerView2 = findViewById(R.id.pictograma_list_frase);
-
-        assert recyclerView2 != null;
-
-        adapter = new DiferenteAdapter(picto_seleccionados);
-        setupRecyclerView((RecyclerView) recyclerView2,(DiferenteAdapter) adapter,PIC_SELECCIONADO);
-
+        InitPictoAdapterSeleccionados(picto_seleccionados);
     }
 
     public void Delete(int index){
         picto_seleccionados.remove(index);
         mostrarDatosSeleccionados(picto_seleccionados);
-        View recyclerView2 = findViewById(R.id.pictograma_list_frase);
-
-        assert recyclerView2 != null;
-
-        adapter = new DiferenteAdapter(picto_seleccionados);
-        setupRecyclerView((RecyclerView) recyclerView2,(DiferenteAdapter) adapter,PIC_SELECCIONADO);
-
+        InitPictoAdapterSeleccionados(picto_seleccionados);
     }
-
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -116,13 +117,17 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
         Pictograma nuevo_pictograma=new Pictograma(nombre,categoria,idDrawable,tipo);
         picto_seleccionados.add(nuevo_pictograma);
         mostrarDatosSeleccionados(picto_seleccionados);
-        View recyclerView2 = findViewById(R.id.pictograma_list_frase);
+        InitPictoAdapterSeleccionados(picto_seleccionados);
 
+    }
+
+    public void InitPictoAdapterSeleccionados(List <Pictograma> picto_seleccionados){
+
+        View recyclerView2 = findViewById(R.id.pictograma_list_frase);
         assert recyclerView2 != null;
 
         adapter = new DiferenteAdapter(picto_seleccionados);
         setupRecyclerView((RecyclerView) recyclerView2,(DiferenteAdapter) adapter,PIC_SELECCIONADO);
-
     }
 
     public  void mostrarDatosSeleccionados(List<Pictograma> items){
@@ -137,9 +142,7 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
     public void InicializarAdaptador(View recyclerView){
         Log.d("leyendo", "Se estan leyendo los datos de la base de datos");
         List<Pictograma> picto = dbHandler.getAllUsers();
-        System.out.println("********");
         adapter = new DiferenteAdapter(picto);
-        System.out.println("********");
         setupRecyclerView((RecyclerView) recyclerView,(DiferenteAdapter) adapter,PIC_NORMAL);
 
     }
@@ -440,20 +443,10 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
             public void onClick(View v) {
                 int position = getAdapterPosition();
 
-
-
                 Delete(position);
-
-                //Pictograma pictograma_frase = mValues.get(position);
-                //String x= position + " - " + pictograma_frase.getNombre();
-                //Toast.makeText(getApplicationContext(), x , Toast.LENGTH_LONG).show();
 
             }
         }
-
-
-
-
 
 
         ////////////////////////////////////////////////////////////////////

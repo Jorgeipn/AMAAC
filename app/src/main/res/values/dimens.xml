@@ -29,4 +29,6 @@
     <!--Especifica el ancho de cada columna para el contenedor de pictogramas de acuerdo asu categoria de la cuadrícula GridView en agtributo columnWidth-->
     <dimen name="dimPicCat">100dp</dimen>
 
+    <dimen name="fab_elevation">8dp</dimen>
+    <dimen name="fab_elevation_press">12dp</dimen>
 </resources>

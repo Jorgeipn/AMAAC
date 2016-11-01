@@ -3,6 +3,7 @@ package mx.com.ipn.amaac;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,12 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import mx.com.ipn.amaac.tableroDeComunicacion.adaptadores.TableroDeComunicacion_main;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+ImageView init_ejercicios_especificos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
+       /*  init_ejercicios_especificos=(ImageView) findViewById(R.id.iv_init_ejercicios_especificos);
+         init_ejercicios_especificos.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Snackbar.make(view, "Se presionó el de ejercicios especificos", Snackbar.LENGTH_LONG)
+                         .setAction("Action", null).show();
+             }
+         }); */
     }
 
     @Override

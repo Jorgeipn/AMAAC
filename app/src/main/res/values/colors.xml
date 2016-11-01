@@ -30,7 +30,10 @@
     <color name="color_verbos">#FF4081</color>
     - <!--   Pink A200
   -->
-
+    <!--Pink 500-->
+    <color name="accent_500">#E91E63</color>
+    <!--Pink 700-->
+    <color name="accent_700">#C2185B</color>
 
 </resources>
 
