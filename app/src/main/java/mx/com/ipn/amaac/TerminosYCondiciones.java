@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import mx.com.ipn.amaac.tableroDeComunicacion.adaptadores.TableroDeComunicacion_main;
+import mx.com.ipn.amaac.tableroDeComunicacion.model.DataManager;
 
 public class TerminosYCondiciones extends AppCompatActivity {
 
@@ -31,6 +32,9 @@ public class TerminosYCondiciones extends AppCompatActivity {
         SharedPreferences.Editor editor= preferences.edit();
         editor.putBoolean("opcion", true);
         editor.commit();
+
+        DataManager dataManager=new DataManager();
+        dataManager.Init_Pictogramas(this);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

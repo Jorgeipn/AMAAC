@@ -1,0 +1,28 @@
+<FrameLayout android:id="@+id/fl_contenedorFrase"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:layout_weight=".1"
+    android:background="@color/colorPrimary_light"
+    tools:ignore="RtlHardcoded"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/pictograma_list_frase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_cardview_pictograma_frase" />
+
+</FrameLayout>
+
+
+    <!--
+   se ha incrustado el layout manager a través del atributo app:layoutManager para generar una lista.
+   Incluso también podemos visualizar el diseño de los ítems en la vista de previsualización con el atributo
+   auxiliar tools:listitem.
+
+    app:layoutManager="GridLayoutManager" en esta linea podemos optar por LinearLayoutManager-->

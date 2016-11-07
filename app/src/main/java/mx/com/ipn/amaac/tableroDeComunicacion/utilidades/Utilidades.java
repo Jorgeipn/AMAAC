@@ -1,4 +1,4 @@
-package mx.com.ipn.amaac.tableroDeComunicacion.model;
+package mx.com.ipn.amaac.tableroDeComunicacion.utilidades;
 
 import mx.com.ipn.amaac.R;
 
@@ -33,7 +33,35 @@ public class Utilidades {
 
         return d;
     }
+    public static int getBackground_CardView(int categoria){
+        int d;
 
+        switch (categoria){
+            case 1:
+                d = 0xff00E5FF;
+                break;
+            case 2:
+                d = 0xffFFEA00;
+                break;
+            case 3:
+                d = 0xff607D8B;
+                break;
+            case 4:
+                d = 0xff64FFDA;
+                break;
+            case 5:
+                d = 0xffCE93D8;
+                break;
+            case 6:
+                d = 0xffFF4081;
+                break;
+            default:
+                d = 0xffFFFFFF;
+                break;
+        }
+
+        return d;
+    }
 
 
 }

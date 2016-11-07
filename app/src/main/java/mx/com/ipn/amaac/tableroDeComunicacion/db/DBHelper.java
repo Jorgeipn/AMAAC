@@ -49,37 +49,58 @@ public class DBHelper  extends SQLiteOpenHelper {
     public static final  String TABLE_PICTOGRAMA="pictograma";
 
 
-    //SNombre de los campos de la tabla usuarios
+    // Nombre de los campos de la tabla usuarios
     public static final  String ID="idPictograma";
-    public static final  String NOMBRE="nombre";
-    public static final  String CATEGORIA="categoria";
-    public static final  String ID_DRAWABLE="idDrawable";
     public static final  String TIPO="tipo";
+    public static final  String CATEGORIA="categoria";
+    public static final  String NOMBRE="nombre";
+    public static final  String ID_DRAWABLE="idDrawable";
 
 
     //sentencia para crear la tabla pictograma
 
     public static final String CREATE_TABLE_PICTOGRAMA="CREATE TABLE "+ TABLE_PICTOGRAMA+" ("
-            + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + NOMBRE +" TEXT NOT NULL,"
-            + CATEGORIA +" INTEGER,"
-            + ID_DRAWABLE +" INTEGER,"
-            + TIPO +" INTEGER);";
+            + ID           + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + TIPO         + " INTEGER,"
+            + CATEGORIA    + " INTEGER,"
+            + NOMBRE       + " TEXT NOT NULL,"
+            + ID_DRAWABLE  + " INTEGER);";
 
 
 
-    /*addUser() will add a new User to database*/
-    public void addUser(Pictograma picto) {
+    /* addPictograma() Agrega un nuevo Pictograma a la  Database*/
+    public void addPictograma(Pictograma picto) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues values = new ContentValues();
-        values.put(NOMBRE, picto.getNombre());
-        values.put(CATEGORIA, picto.getCategoria());
-        values.put(ID_DRAWABLE,picto.getIdDrawable());
         values.put(TIPO,picto.getTipo());
+        values.put(CATEGORIA, picto.getCategoria());
+        values.put(NOMBRE, picto.getNombre());
+        values.put(ID_DRAWABLE,picto.getIdDrawable());
 
         db.insert(TABLE_PICTOGRAMA, null, values); //Insert query to store the record in the database
         db.close();
     }
+
+
+    /* getAllPictogramas() Retorna una  lista de todos los pictogramas de la Database*/
+    public List<Pictograma> getAllPictogramas() {
+        List<Pictograma> usersList = new ArrayList<>();
+        String selectQuery = "SELECT  * FROM " + TABLE_PICTOGRAMA;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Pictograma pic = new Pictograma(cursor.getInt(1), cursor.getInt(2),cursor.getString(3),cursor.getInt(4));
+                usersList.add(pic);
+            } while (cursor.moveToNext());
+        }
+        return usersList;
+    }
+
+
 
     /*getUser() will return he user's object if id matches*/
     public Pictograma getUser(int user_id) {
@@ -90,14 +111,15 @@ public class DBHelper  extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        Pictograma pic = new Pictograma(cursor.getString(1), cursor.getInt(2),cursor.getInt(3),cursor.getInt(4));
+        Pictograma pic = new Pictograma(cursor.getInt(1), cursor.getInt(2),cursor.getString(3),cursor.getInt(4));
         return pic;
     }
 
-    /*getAllUsers() will return the list of all users*/
-    public List<Pictograma> getAllUsers() {
+
+    /* getCategoria() Retorna una lista de la categoria en la que pertenecen los pictogramas*/
+    public List<Pictograma> getCategoria(int categoria) {
         List<Pictograma> usersList = new ArrayList<>();
-        String selectQuery = "SELECT  * FROM " + TABLE_PICTOGRAMA;
+        String selectQuery = "SELECT  * FROM " + TABLE_PICTOGRAMA + " WHERE " +CATEGORIA+"="+categoria ;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -105,7 +127,7 @@ public class DBHelper  extends SQLiteOpenHelper {
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
-                Pictograma pic = new Pictograma(cursor.getString(1), cursor.getInt(2),cursor.getInt(3),cursor.getInt(4));
+                Pictograma pic = new Pictograma(cursor.getInt(1), cursor.getInt(2),cursor.getString(3),cursor.getInt(4));
                 usersList.add(pic);
             } while (cursor.moveToNext());
         }
@@ -123,8 +145,6 @@ public class DBHelper  extends SQLiteOpenHelper {
 
         return count;
     }
-
-
 
 
 

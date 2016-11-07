@@ -21,8 +21,7 @@
         android:layout_height="match_parent"
         android:weightSum="1"
         tools:ignore="UselessLeaf,UselessParent"
-        android:layout_alignParentTop="true"
-        >
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:layout_width="match_parent"
@@ -35,8 +34,7 @@
             tools:ignore="ContentDescription,RtlHardcoded,RtlSymmetry"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
-            android:paddingLeft="30dp"
-            />
+            android:paddingLeft="30dp" />
 
         <LinearLayout
             android:orientation="horizontal"
