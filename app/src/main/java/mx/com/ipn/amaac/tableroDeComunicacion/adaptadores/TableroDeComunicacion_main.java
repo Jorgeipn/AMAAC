@@ -97,13 +97,11 @@ public class TableroDeComunicacion_main extends AppCompatActivity implements Tex
 
     }
 
-
     public void Init_Adapter(RecyclerView mRecyclerView , List<Pictograma> items){
 
         assert mRecyclerView != null;
         adapter = new PictogramaAdapter(items);
         setupRecyclerView(mRecyclerView,  adapter,TIPO_PIC_NORMAL);
-
 
     }
 
