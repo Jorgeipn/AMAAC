@@ -1,6 +1,7 @@
 package mx.com.ipn.amaac.tableroDeComunicacion.model;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,6 @@ import static mx.com.ipn.amaac.tableroDeComunicacion.utilidades.Utilidades.getBa
  */
 
 public class MethodsManager {
-
 
     public List<Pictograma> Guardar(int tipo,int categoria,String nombre,int idDrawable,List<Pictograma> PIC_GUARDADO){
         Pictograma new_pictograma=new Pictograma(tipo,categoria,nombre,idDrawable);

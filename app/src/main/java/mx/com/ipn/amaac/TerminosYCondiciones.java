@@ -22,10 +22,6 @@ public class TerminosYCondiciones extends AppCompatActivity {
         boolean TERMINOS_Y_CONDICIONES= preferences.getBoolean("opcion", false);
 
 
-
-
-
-
     }
 
     public void TYC_aceptar(View view){
@@ -33,10 +29,8 @@ public class TerminosYCondiciones extends AppCompatActivity {
         editor.putBoolean("opcion", true);
         editor.commit();
 
-        DataManager dataManager=new DataManager();
-        dataManager.Init_Pictogramas(this);
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, IniciarConfiguraciones.class);
         startActivity(intent);
         finish();
     }

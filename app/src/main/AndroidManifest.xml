@@ -72,16 +72,22 @@
                 android:value="mx.com.ipn.amaac.TecnicaListActivity" />
         </activity>
 
-    <!--Tablero de comunicacion -->
-    <activity
-        android:screenOrientation="landscape"
-        android:theme="@style/AppTheme.NoActionBar"
-        android:name=".tableroDeComunicacion.adaptadores.TableroDeComunicacion_main" />
+        <!-- Tablero de comunicacion -->
+        <activity
+            android:name=".tableroDeComunicacion.adaptadores.TableroDeComunicacion_main"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--  Inicio de las configuraciones de la app AMAAC -->
+        <activity
+            android:name=".IniciarConfiguraciones"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
 
 
-</application>
 
-
-
+    </application>
 
 </manifest>
